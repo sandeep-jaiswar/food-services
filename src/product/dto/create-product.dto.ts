@@ -1,4 +1,4 @@
-export class CreatePostDTO {
+export class CreateProductDTO {
   readonly title: string;
   readonly description: string;
   readonly body: string;

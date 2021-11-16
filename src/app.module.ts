@@ -1,13 +1,15 @@
+import { ProductModule } from './product/product.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { BlogModule } from './blog/blog.module';
 import { ConfigModule } from '@nestjs/config';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
-    BlogModule,
+    UserModule,
+    ProductModule,
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.DBCONNECTIONURL, {
       useNewUrlParser: true,
