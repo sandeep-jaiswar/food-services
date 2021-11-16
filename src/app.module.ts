@@ -3,16 +3,15 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BlogModule } from './blog/blog.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
     BlogModule,
-    MongooseModule.forRoot(
-      `mongodb+srv://SUPERUSER:SUPERUSER@cluster0.imsos.mongodb.net/FOODPOP?retryWrites=true&w=majority`,
-      {
-        useNewUrlParser: true,
-      },
-    ),
+    ConfigModule.forRoot(),
+    MongooseModule.forRoot(process.env.DBCONNECTIONURL, {
+      useNewUrlParser: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
