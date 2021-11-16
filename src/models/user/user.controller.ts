@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDTO } from './dto/create-user.dto';
-import { ValidateObjectId } from '../core/pipes/validate-object-id.pipes';
+import { ValidateObjectId } from '../../core/pipes/validate-object-id.pipes';
 
 @Controller('api/user')
 export class UserController {

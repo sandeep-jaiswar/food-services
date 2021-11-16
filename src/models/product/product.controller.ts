@@ -13,7 +13,7 @@ import {
 } from '@nestjs/common';
 import { ProductService } from './product.service';
 import { CreateProductDTO } from './dto/create-product.dto';
-import { ValidateObjectId } from '../core/pipes/validate-object-id.pipes';
+import { ValidateObjectId } from '../../core/pipes/validate-object-id.pipes';
 
 @Controller('api/product')
 export class ProductController {
