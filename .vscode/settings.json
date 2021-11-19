@@ -1,7 +1,5 @@
 {
-    "cSpell.words": [
-        "DBCONNECTIONURL",
-        "nestjs",
-        "prebuild"
-    ]
+  "cSpell.words": ["DBCONNECTIONURL", "nestjs", "prebuild"],
+  "editor.tabSize": 2,
+  "files.eol": "\n"
 }

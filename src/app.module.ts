@@ -1,3 +1,5 @@
+import { AuthModule } from './authentication/auth.module';
+import { AuthController } from './authentication/auth.controller';
 import { ProductModule } from './modules/product/product.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
@@ -8,6 +10,7 @@ import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
+    AuthModule,
     UserModule,
     ProductModule,
     ConfigModule.forRoot(),
@@ -15,7 +18,7 @@ import { UserModule } from './modules/user/user.module';
       useNewUrlParser: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AuthController, AppController],
   providers: [AppService],
 })
 export class AppModule {}

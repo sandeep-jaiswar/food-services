@@ -1,11 +1,8 @@
 import * as mongoose from 'mongoose';
 
 export const UserSchema = new mongoose.Schema({
-  title: String,
-  description: String,
-  body: String,
-  author: String,
-  date_posted: String,
+  email: String,
+  password: String,
 });
 
 UserSchema.set('timestamps', true);

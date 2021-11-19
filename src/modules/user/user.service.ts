@@ -36,4 +36,19 @@ export class UserService {
     const deletedUser = await this.userModel.findByIdAndRemove(userID);
     return deletedUser;
   }
+
+  async getUserByUsername(email): Promise<User> {
+    const user = await this.userModel.find({ email: email }).exec();
+    return user[0];
+  }
+
+  async findOneByThirdPartyId(thirdPartyId, provider): Promise<User> {
+    const user = await this.userModel.find({ thirdPartyId, provider }).exec();
+    return user[0];
+  }
+
+  async registerOAuthUser(thirdPartyId, provider): Promise<User> {
+    const newUser = await new this.userModel({ thirdPartyId, provider });
+    return newUser.save();
+  }
 }
